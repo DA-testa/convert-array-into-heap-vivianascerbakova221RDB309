@@ -65,10 +65,6 @@ def main():
         return
 
 
-    # input from keyboard
-    n = int(input())
-    data = list(map(int, input().split()))
-
     # checks if length of data is the same as the said length
     assert len(data) == n
 
