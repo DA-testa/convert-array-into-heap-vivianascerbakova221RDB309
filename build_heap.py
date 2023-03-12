@@ -35,16 +35,16 @@ def main():
     # first two tests are from keyboard, third test is from a file
     
     text = input("Enter 'I' for input or 'F' for file")
-    if 'F' in text:
+    if "F" in text:
         file_name = input("Enter file name: ")
-        if 'a' not in file_name:
+        if "a" not in file_name:
             path = './tests/' + file_name
             with open(path, 'r', encoding='utf-8') as file:
                 n = int(file.readline())
                 data = list(map(int, file.readline().split()))
 
     # input from keyboard    
-    if 'I' in text:
+    if "I" in text:
         n = int(input())
         data = list(map(int, input().split()))
 
