@@ -1,16 +1,15 @@
 # python3
-
+# TODO: Create heap and heap sort
+# try to achieve  O(n) and not O(n2)
 
 def build_heap(data):
     swaps = []
-    # TODO: Create heap and heap sort
-    # try to achieve  O(n) and not O(n2)
     n = len(data)
 
 def scan(index):
     min_index = index
-    left_index = 2*index+1
-    right_index = 2*index+2
+    left_index = 2 * index + 1
+    right_index = 2 * index + 2
 
     if left_index < n and data[left_index] < data[min_index]:
         min_index = left_index
@@ -42,6 +41,13 @@ def main():
         n = int(input())
         data = list(map(int, iput().split()))
 
+        swaps = scan(data))
+
+        print(len(swaps))
+
+        for i, j in swaps:
+            print(i, j)
+
     elif "F" in text:
         path = './tests/'
         file_name = input("enter file name: ")
@@ -65,6 +71,10 @@ def main():
         return
 
 
+    # input from keyboard
+    n = int(input())
+    data = list(map(int, input().split()))
+
     # checks if length of data is the same as the said length
     assert len(data) == n
 
@@ -77,6 +87,7 @@ def main():
 
 
     # output all swaps
+    
     print(len(swaps))
     for i, j in swaps:
         print(i, j)
