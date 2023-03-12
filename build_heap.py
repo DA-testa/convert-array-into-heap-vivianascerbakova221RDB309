@@ -23,9 +23,9 @@ def scan(index):
         data[index], data[min_index] = data[min_index]
         scan(min_index)
 
-for index in range(size // 2,-1,-1):
-    scan(index)
-    return swaps
+        for index in range(size // 2,-1,-1):
+            scan(index)
+        return swaps
 
 
 def main():
