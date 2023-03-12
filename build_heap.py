@@ -25,8 +25,6 @@ def scan(index):
 
 for index in range(size // 2,-1,-1):
     scan(index)
-
-
     return swaps
 
 
@@ -37,61 +35,34 @@ def main():
     # first two tests are from keyboard, third test is from a file
     
     text = input("Enter 'I' for input or 'F' for file")
-    if "I" in text:
+    if 'F' in text:
+        file_name = input("Enter file name: ")
+        if 'a' not in file_name:
+            path = './tests/' + file_name
+            with open(path, 'r', encoding='utf-8') as file:
+                n = int(file.readline())
+                data = list(map(int, file.readline().split()))
+
+    # input from keyboard    
+    if 'I' in text:
         n = int(input())
-        data = list(map(int, iput().split()))
-
-        swaps = scan(data))
-
-        print(len(swaps))
-
-        for i, j in swaps:
-            print(i, j)
-
-    elif "F" in text:
-        path = './tests/'
-        file_name = input("enter file name: ")
-        folder = path + file_name
-
-        if 'a' in file_name:
-            print("File is not allowed to contain letter 'a'")
-            return
-        try:
-            with open(folder, 'r', encoding='utf-8') as file:
-                n = int(file,readLine())
-                data = list(map(int, file.readLine().split()))
-        except FileNotFoundError:
-            print("Error: File not found")
-            return
-        except ValueError:
-            print("Error: Invalid input format")
-            return
-    else:
-        print("Enter 'I' or 'F':")
-        return
-
-
-    # input from keyboard
-    n = int(input())
-    data = list(map(int, input().split()))
+        data = list(map(int, input().split()))
 
     # checks if length of data is the same as the said length
     assert len(data) == n
-
+       
     # calls function to assess the data 
     # and give back all swaps
-    swaps = build_heap(data)
+    swaps = scan(data))
 
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
-
-
-    # output all swaps
+    assert len(swaps) <= n*4
     
     print(len(swaps))
     for i, j in swaps:
-        print(i, j)
-
+            print(i, j)
+    # outputs all swaps
 
 if __name__ == "__main__":
     main()
