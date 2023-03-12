@@ -3,7 +3,6 @@ def build_heap(data):
     n = len(data)
     
     def scan(index):
-        nonlocal swaps
         min_index = index
         left_index = 2 * index + 1
         right_index = 2 * index + 2
