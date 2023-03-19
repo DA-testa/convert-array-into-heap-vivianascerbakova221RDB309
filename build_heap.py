@@ -26,7 +26,7 @@ def build_heap(data):
 
 
 def main():
-    text = input("Enter 'I' for input or 'F' for file")
+    text = input("choose 'I' for input or 'F' for file")
     if "F" in text:
         file_name = input("Enter file name: ")
         if "a" not in file_name:
